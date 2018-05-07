@@ -19,10 +19,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     
     <!-- Hardware button navigation -->
-    <string name="hardware_keys_home_key_title">Tasto Home</string>
-    <string name="hardware_keys_menu_key_title">Swipe a destra</string>
-    <string name="hardware_keys_assist_key_title">Long tap</string>
-    <string name="hardware_keys_appswitch_key_title">Swipe a sinistra</string>
-    <string name="hardware_keys_back_key_title">Tap</string>
+    <string name="z2_hardware_keys_home_key_title">Home button</string>
+    <string name="z2_hardware_keys_menu_key_title">Right swipe</string>
+    <string name="z2_hardware_keys_assist_key_title">Long tap</string>
+    <string name="z2_hardware_keys_appswitch_key_title">Left swipe</string>
+    <string name="z2_hardware_keys_back_key_title">Tap</string>
  
 </resources>
