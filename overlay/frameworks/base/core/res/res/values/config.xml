@@ -511,4 +511,8 @@
     <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
 
+<!-- Whether device supports hardware keys or not -->
+	<bool name="config_button_brightness_support">true</bool>
+    <integer name="config_button_brightness_default">128</integer>
+
 </resources>
