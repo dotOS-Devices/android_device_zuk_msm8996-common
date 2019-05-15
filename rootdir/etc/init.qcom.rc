@@ -559,13 +559,6 @@ service vendor.ppd /vendor/bin/mm-pp-dpps
 
 service wlan-sh /vendor/bin/init.wlan.sh
     class late_start
-    user root
-    group root
-    disabled
-    oneshot
-
-service bt-sh /vendor/bin/init.bt.sh
-    class late_start
     user bluetooth
     group bluetooth
     disabled
