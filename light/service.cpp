@@ -22,6 +22,7 @@
 
 #include "Light.h"
 
+// libhwbinder:
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 

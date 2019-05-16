@@ -63,15 +63,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
-    persist.vendor.data.mode=concurrent \
-    persist.radio.aosp_usr_pref_sel=true \
+    persist.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
-    ro.vendor.use_data_netmgrd=true
+    ro.use_data_netmgrd=true
 
 # Display (Qualcomm AD)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=2 \
-    ro.vendor.display.cabl=2 \
+    ro.qualcomm.cabl=0 \
     ro.qcom.ad=1 \
     ro.qcom.ad.calib.data=/vendor/etc/calib.cfg \
     ro.qcom.ad.sensortype=2
@@ -98,7 +96,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_rotator_downscale=1 \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    vendor.video.disable.ubwc=1 \
+    vendor.gralloc.disable_wb_ubwc=1 \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.nohdcp=1 \
     debug.sf.enable_hwc_vds=1
@@ -151,9 +149,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.rat_on=combine \
-    persist.radio.calls.on.ims=1 \
-    persist.dbg.ims_volte_enable=1
+    persist.vendor.radio.rat_on=combine
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -166,19 +162,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.mux_count=8 \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0
-
-# Surfaceflinger
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
-    debug.sf.early_gl_app_phase_offset_ns=15000000
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-    ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_virtual_display_dimension=4096
 
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -197,10 +180,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# Debug
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1  

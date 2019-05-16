@@ -10,7 +10,6 @@ LOCAL_SRC_FILES := \
         util/QCameraFlash.cpp \
         util/QCameraPerf.cpp \
         util/QCameraQueue.cpp \
-        util/QCameraDisplay.cpp \
         util/QCameraCommon.cpp \
         QCamera2Hal.cpp \
         QCamera2Factory.cpp
@@ -59,13 +58,7 @@ ifeq ($(TARGET_USES_MEDIA_EXTENSIONS), true)
 LOCAL_CFLAGS += -DUSE_MEDIA_EXTENSIONS
 endif
 
-#USE_DISPLAY_SERVICE from Android O onwards
-#to receive vsync event from display
-ifeq ($(filter OMR1 O 8.1.0, $(PLATFORM_VERSION)), )
-USE_DISPLAY_SERVICE := true
-LOCAL_CFLAGS += -DUSE_DISPLAY_SERVICE
-endif
-
+LOCAL_CFLAGS += -std=c++11 -std=gnu++0x
 #HAL 1.0 Flags
 LOCAL_CFLAGS += -DDEFAULT_DENOISE_MODE_ON -DHAL3 -DQCAMERA_REDEFINE_LOG
 
@@ -77,9 +70,12 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/stack/mm-camera-interface/inc \
         $(LOCAL_PATH)/util \
         $(LOCAL_PATH)/HAL3 \
+        hardware/libhardware/include/hardware \
         $(call project-path-for,qcom-media)/libstagefrighthw \
         $(call project-path-for,qcom-media)/mm-core/inc \
-        $(TARGET_OUT_HEADERS)/mm-camera-lib/cp/prebuilt
+        system/core/include/cutils \
+        system/core/include/system \
+        system/media/camera/include/system
 
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
@@ -100,24 +96,16 @@ endif
 
 #LOCAL_STATIC_LIBRARIES := libqcamera2_util
 LOCAL_C_INCLUDES += \
+        $(TARGET_OUT_HEADERS)/qcom/display
+LOCAL_C_INCLUDES += \
         $(call project-path-for,qcom-display)/libqservice
 LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
-ifeq ($(USE_DISPLAY_SERVICE),true)
-LOCAL_SHARED_LIBRARIES += android.frameworks.displayservice@1.0 android.hidl.base@1.0 libhidlbase
-else
-LOCAL_SHARED_LIBRARIES += libgui
-endif
 ifeq ($(TARGET_TS_MAKEUP),true)
 LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
-LOCAL_HEADER_LIBRARIES += display_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
-LOCAL_HEADER_LIBRARIES += libandroid_sensor_headers
-LOCAL_HEADER_LIBRARIES += libcutils_headers
-LOCAL_HEADER_LIBRARIES += libsystem_headers
-LOCAL_HEADER_LIBRARIES += libhardware_headers
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 

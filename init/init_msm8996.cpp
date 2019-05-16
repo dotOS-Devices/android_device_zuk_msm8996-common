@@ -33,10 +33,11 @@
 
 #include <android-base/properties.h>
 
+#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
-using android::base::SetProperty;
+using android::init::property_set;
 
 char const *heapminfree;
 char const *heapmaxfree;
@@ -60,14 +61,20 @@ void check_device()
 
 void vendor_load_properties() 
 {
+	std::string platform;
+
+	platform = GetProperty("ro.board.platform", "");
+	if (platform != ANDROID_TARGET)
+		return;
+
 	check_device();
 
-	SetProperty("dalvik.vm.heapstartsize", "8m");
-	SetProperty("dalvik.vm.heapgrowthlimit", "256m");
-	SetProperty("dalvik.vm.heapsize", "512m");
-	SetProperty("dalvik.vm.heaptargetutilization", "0.75");
-	SetProperty("dalvik.vm.heapminfree", heapminfree);
-	SetProperty("dalvik.vm.heapmaxfree", heapmaxfree);
+	property_set("dalvik.vm.heapstartsize", "8m");
+	property_set("dalvik.vm.heapgrowthlimit", "256m");
+	property_set("dalvik.vm.heapsize", "512m");
+	property_set("dalvik.vm.heaptargetutilization", "0.75");
+	property_set("dalvik.vm.heapminfree", heapminfree);
+	property_set("dalvik.vm.heapmaxfree", heapmaxfree);
 
 }
 

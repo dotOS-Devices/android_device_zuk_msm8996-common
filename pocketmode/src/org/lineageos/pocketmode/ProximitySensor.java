@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
- *               2018-2019 The LineageOS Project
+ * Copyright (c) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,18 +22,16 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.FileUtils;
 import android.util.Log;
 
-
-import java.io.IOException;
+import org.lineageos.internal.util.FileUtils;
 
 public class ProximitySensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
     private static final String TAG = "PocketModeProximity";
 
-    private static final String FP_PROX_NODE = "/sys/devices/soc/soc:fpc1020/proximity_state";
+    private static final String FPC_FILE = "/sys/devices/soc/soc:fpc1020/proximity_state";
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -41,18 +39,15 @@ public class ProximitySensor implements SensorEventListener {
 
     public ProximitySensor(Context context) {
         mContext = context;
-        mSensorManager = (SensorManager)
-                mContext.getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
         boolean isNear = event.values[0] < mSensor.getMaximumRange();
-        try {
-            FileUtils.stringToFile(FP_PROX_NODE, isNear ? "1" : "0");
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to write to " + FP_PROX_NODE, e);
+        if (FileUtils.isFileWritable(FPC_FILE)) {
+            FileUtils.writeLine(FPC_FILE, isNear ? "1" : "0");
         }
     }
 

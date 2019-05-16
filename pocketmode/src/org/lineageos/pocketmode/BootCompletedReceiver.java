@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2016 The CyanogenMod Project
- *               2018-2019 The LineageOS Project
+ * Copyright (c) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ package org.lineageos.pocketmode;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.UserHandle;
 import android.util.Log;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -28,9 +27,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "ZukPocketMode";
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(final Context context, Intent intent) {
         Log.d(TAG, "Starting");
-        context.startServiceAsUser(new Intent(context, PocketModeService.class),
-                UserHandle.CURRENT);
+        context.startService(new Intent(context, PocketModeService.class));
     }
 }

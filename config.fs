@@ -97,7 +97,7 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-[mnt/vendor/persist/]
+[persist/]
 mode: 0771
 user: AID_SYSTEM
 group: AID_SYSTEM
