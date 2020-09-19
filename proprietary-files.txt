@@ -321,6 +321,9 @@ vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
 vendor/lib64/libdpmqmihal.so|25d74c0e867f023b71a7c599ab6d213c7de2725d
 
+# DPM - from lmi - RKQ1.200826.002
+system_ext/lib64/libdpmframework.so:product/lib64/libdpmframework.so|902496fb2f5471f3f415f8ba7dd7e053
+
 # DRM and SEE
 vendor/bin/qseecomd
 vendor/lib64/libGPreqcancel.so
