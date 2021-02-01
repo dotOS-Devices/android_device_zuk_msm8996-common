@@ -141,23 +141,14 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
     persist.radio.volte.dan_support=true \
-    persist.radio.VT_ENABLE=1 \
-    persist.vendor.radio.VT_HYBRID_ENABLE=1 \
-    persist.vendor.radio.videopause.mode=1 \
-    persist.qti.telephony.vt_cam_interface=2 \
-    persist.radio.VT_CAM_INTERFACE=2 \
-    persist.vendor.qti.telephony.vt_cam_interface=2 \
-    persist.vendor.radio.VT_CAM_INTERFACE=2 \
-    persist.radio.calls.on.ims=1 \
-    persist.vendor.vt.supported=1
+    persist.radio.calls.on.ims=1  \
+    service.qti.ims.enabled=1 \
+    persist.vendor.vt.supported=1 \
+    persist.radio.VT_HYBRID_ENABLE=1
 
 # IWLAN
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.vendor.data.iwlan.enable=true \
-    persist.data.iwlan.enable=true \
-    persist.data.iwlan=1 \
-    persist.data.iwlan.ipsec.ap=1 \
-    persist.vendor.sys.cnd.iwlan=1 \
     ro.telephony.iwlan_operation_mode=legacy
 
 # Set lmkd options
