@@ -312,6 +312,7 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
+    libstagefright_enc_common \
     libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
