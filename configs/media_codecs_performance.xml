@@ -127,18 +127,5 @@
             <Limit name="measured-frame-rate-640x360" range="173-173" /> <!-- N=32 v93%=1.0 -->
             <Limit name="measured-frame-rate-1920x1080" range="22-23" /> <!-- N=32 v93%=1.1 -->
         </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.decoder.vp9" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="250-251" /> <!-- N=32 v93%=1.0 -->
-            <Limit name="measured-frame-rate-640x360" range="247-251" /> <!-- N=32 v93%=1.0 -->
-            <Limit name="measured-frame-rate-1280x720" range="252-255" /> <!-- N=32 v93%=1.0 -->
-            <Limit name="measured-frame-rate-1920x1080" range="151-151" /> <!-- N=32 v93%=1.0 -->
-            <Limit name="measured-frame-rate-3840x2160" range="36-36" /> <!-- N=32 v93%=1.0 -->
-        </MediaCodec>
-        <MediaCodec name="c2.android.vp9.decoder" type="video/x-vnd.on2.vp9" update="true">
-            <Limit name="measured-frame-rate-320x180" range="445-445" /> <!-- N=32 v93%=1.0 -->
-            <Limit name="measured-frame-rate-640x360" range="120-120" /> <!-- N=32 v93%=1.2 -->
-            <Limit name="measured-frame-rate-1280x720" range="84-86" /> <!-- N=32 v93%=1.1 -->
-            <Limit name="measured-frame-rate-1920x1080" range="54-55" /> <!-- N=32 v93%=1.0 -->
-        </MediaCodec>
     </Decoders>
 </MediaCodecs>
