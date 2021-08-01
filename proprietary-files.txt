@@ -689,17 +689,20 @@ vendor/etc/init/dataqti.rc|6abfd1a850d782adbbb6f42c9d8ca870036b2ad1
 vendor/etc/init/netmgrd.rc|fd3457c69a9fab11b87d0d1b494188fe089684cd
 vendor/etc/init/port-bridge.rc|e52d61a0de5e8a3b21bfbfca929e862422645377
 
-# Sensors - from op3 - PKQ1.181203.001
-vendor/bin/sensors.qti|34b67b318750daa1170730f4ffc0a9b46ee1777b
-vendor/etc/sensors/hals.conf|bf3677cbfa5ce5735662e8c259cb027969f65c87
-vendor/lib64/hw/activity_recognition.msm8996.so|64901bc837ed32dee28bbff9a60df7d8ac5cd140
-vendor/lib64/libsensor1.so|f8524d62d2ad52849f4a13b018baf08d0eac8180
-vendor/lib64/libsensor_reg.so|8ca48358abf3f8f84f86036b02dbb210a5870742
-vendor/lib64/sensors.ssc.so|f4108878f452ff445bfee7d6f624e350353469e5
-vendor/lib/hw/activity_recognition.msm8996.so|6bec19a06f59abca3d43cd6a83c88fbe9daea7f6
-vendor/lib/libsensor1.so|de27fcd2ab95788e09310c5f2cf58a0540afcfe3
-vendor/lib/libsensor_reg.so|9a3568dc423598886b7f16d91d76e53cd0220387
-vendor/lib/sensors.ssc.so|2b7c1996cc12e6fac7d1fa09c5dfe1c93a1311d9
+# Sensors - from LA.UM.9.6.2.r1-04200-89xx.0
+system_ext/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|2088fddd65857ef518bf51ff7f0735f6fe6d3f83
+system_ext/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|cb33842199cce9fe438a413ea170a9537e7a259b
+vendor/bin/sensors.qti|fbdc8564f9067eff2a5de1742b81df28bc56f90a
+vendor/lib/hw/activity_recognition.msm8996.so|98d3def727d5e5d23a8d0e18e3da90d903b9eaf2
+vendor/lib/libsensor1.so|2e09ec3c6432812152911180d048e9b176bb0102
+vendor/lib/libsensor_reg.so|848f74306042a91eab6dc68723d27062dc6e8522
+vendor/lib/sensor_calibrate.so|b46cd4135ee0b28f02fd05bba339dbda7585fb1d
+vendor/lib/sensors.ssc.so|ab53946c1bf4d207bb1a48fa9da92ceb3fdf39c6
+vendor/lib64/hw/activity_recognition.msm8996.so|20948be407097354f1cb206dadc0c07a46ec5c5b
+vendor/lib64/libsensor1.so|adea3748f7f4681208148e5e33f77b084c3ad0d0
+vendor/lib64/libsensor_reg.so|4550e44b37ce57db92bb379e9c65ece68c802d1e
+vendor/lib64/sensor_calibrate.so|9d211108a8bff4a4dd4f005a2e690b92d8588bf2
+vendor/lib64/sensors.ssc.so|92f6c3da84c8790778b78b5dfa8593e12c940494
 
 # Thermal - from op3 - PKQ1.181203.001
 vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e
