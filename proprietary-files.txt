@@ -314,6 +314,14 @@ vendor/lib64/vendor.qti.latency@2.0.so|1589280034898a0ab3052234ef90b7c674d5be5b
 # Fingerprint
 lib64/hw/fingerprint.qcom.so:vendor/lib64/hw/fingerprint.qcom.so
 
+# DSP - from LA.UM.9.6.2.r1-04200-89xx.0
+system_ext/lib/vendor.qti.hardware.dsp@1.0.so|ab9ad68dd718fcd970cbcc14399c5465223a3c97
+system_ext/lib64/vendor.qti.hardware.dsp@1.0.so|368448c5cfaa85f655e9f7d3c3cf17e116733ca5
+vendor/bin/dspservice|c7809e32581d5c6efac65a3a7689f43526c17bb8
+vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f
+vendor/lib/vendor.qti.hardware.dsp@1.0.so|41bdb4d9eda88cebfbc3bc6db64ff875416dbf5a
+vendor/lib64/vendor.qti.hardware.dsp@1.0.so|5f30d9c5fff738e6194a36a5b93372fa32ec0471
+
 # DPM - from daisy - QKQ1.191002.002 V11.0.2.0.QDLMIXM
 product/bin/dpmd|cac8f3eadeeec202f56d5b5f7a8c75e82e376d9f
 product/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
